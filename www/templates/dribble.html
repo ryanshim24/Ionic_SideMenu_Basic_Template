@@ -1,0 +1,27 @@
+<ion-view title="Dribble">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <div class="list card" data-ng-repeat="image in imageList">
+      <div class="item item-avatar">
+
+        <img data-ng-src="{{image.player.avatar_url}}" alt="">
+        <h2>{{image.player.username}}</h2>
+        <p>{{image.player.location}}</p>
+      </div>
+
+      <div class="item item-image">
+        <img data-ng-src="{{image.image_url}}">
+      </div>
+
+<!-- onclick="window.open('document.getElementById('dafuck').attributes.href' -->
+      <a class="item item-icon-left bar" ng-href="{{image.url}}">
+        <i class="icon ion-heart"></i>
+        <p style="margin-top: -5px;">Visit Orignal Image</p>
+      </a>
+    </div>
+    <ion-infinite-scroll on-infinite="init()"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
